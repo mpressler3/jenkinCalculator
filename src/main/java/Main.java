@@ -1,23 +1,38 @@
+import java.util.Scanner;
+
 public class Main {
     public static void main(String[] args) {
+        Scanner myScanner = new Scanner(System.in);
+        String command = myScanner.next();
         Calculator calculator = new Calculator();
-        if (args[0].equals("add")) {
-            System.out.println(calculator.add(Integer.parseInt(args[1]), Integer.parseInt(args[2])));
-        }
-        else if(args[0].equals("subtract")) {
-            System.out.println(calculator.subtract(Integer.parseInt(args[1]), Integer.parseInt(args[2])));
-        }
-        else if(args[0].equals("multiply")) {
-            System.out.println(calculator.multiply(Integer.parseInt(args[1]), Integer.parseInt(args[2])));
-        }
-        else if(args[0].equals("divide")) {
-            System.out.println(calculator.divide(Integer.parseInt(args[1]), Integer.parseInt(args[2])));
-        }
-        else if(args[0].equals("fib")) {
-            System.out.println(calculator.fibonacciNumberFinder(Integer.parseInt(args[1])));
-        }
-        else if(args[0].equals("binary")) {
-            System.out.println(calculator.intToBinaryNumber(Integer.parseInt(args[1])));
+        int int1;
+        int int2;
+        System.out.println("Enter command:");
+        while(!command.equals("end")) {
+            if (command.equals("add")) {
+                int1 = myScanner.nextInt();
+                int2 = myScanner.nextInt();
+                System.out.println(calculator.add(int1, int2));
+            } else if (command.equals("subtract")) {
+                int1 = myScanner.nextInt();
+                int2 = myScanner.nextInt();
+                System.out.println(calculator.subtract(int1, int2));
+            } else if (command.equals("multiply")) {
+                int1 = myScanner.nextInt();
+                int2 = myScanner.nextInt();
+                System.out.println(calculator.multiply(int1, int2));
+            } else if (command.equals("divide")) {
+                int1 = myScanner.nextInt();
+                int2 = myScanner.nextInt();
+                System.out.println(calculator.divide(int1, int2));
+            } else if (command.equals("fib")) {
+                int1 = myScanner.nextInt();
+                System.out.println(calculator.fibonacciNumberFinder(int1));
+            } else if (command.equals("binary")) {
+                int1 = myScanner.nextInt();
+                System.out.println(calculator.intToBinaryNumber(int1));
+            }
+            command = myScanner.next();
         }
     }
 }
