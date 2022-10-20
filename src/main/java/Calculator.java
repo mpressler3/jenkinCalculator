@@ -76,6 +76,6 @@ class Calculator {
         return rand + n;
     }
 
-    //mm
+    //mmm
 
 }
